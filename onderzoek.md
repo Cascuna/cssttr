@@ -16,3 +16,7 @@ Bij traditionale websites zie je de login balk vaak in de header, maar als we va
 Het is natuurlijk belangerijk dat Marijn weet waar hij zich op elk moment bevind, en dus is het belangerijk dat het element dat op dat moment actief getabbed is, een duidelijk niet opdringende border/kleur combinatie heeft.
 #### Het is hier belangerijk dat de tab index natuurlijk aanvoelt. het moet aan slutien op de flow van de website
 Door de tab index natuurlijk door de website te lopen, laat je de focus niet weg vallen. De componenten staan los van elkaar, en moeten zo behandeld worden. 
+
+
+#### Tweede idee navigatie
+Voor de website lijkt het me nutting om acceskeys te benutten. Om dit aan te moedigen leek het me leuk om de navbar naar de linkerkant van het scherm te plaatsen, 

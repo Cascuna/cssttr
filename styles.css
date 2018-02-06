@@ -1,11 +1,16 @@
-*:focus{
+*:focus {
     outline: 1px SOLID red;
 }
+
+:root {
+    --min-width: 2em;
+}
+
 body {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: (25%, 50%, 25%);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: 1fr 4fr 1fr;
+ 
 }
 
 header {
@@ -16,6 +21,10 @@ header {
 
     /* Span across columns 1 to 4 */
     grid-column: span 3;
+}
+
+content {
+    grid-column: 2;
 }
 
 nav {
@@ -32,6 +41,8 @@ nav ul {
     text-align: center;
   }
 
+
+
 nav ul li {
     font-family: 'Oswald', sans-serif;
     font-size: 1.2em;
@@ -45,7 +56,7 @@ nav ul ul{
     display:none;
 }
 
-nav ul li:focus, nav ul li:hover > ul {
+nav ul li:focus-within > ul {
     display:block;
 }
 
@@ -54,4 +65,32 @@ a:focus {
 }
 a {
     display: inline;
+}
+
+a[name="skip"] {
+    /* We willen de knop altijd boven de pagina hebben als deze niet gefocust is */
+    right: 63%;
+    position: fixed;
+    top: -2.5em;
+}
+
+a[name="skip"]:focus {
+    top: 4em;
+}
+
+svg {
+    width: 2em;
+}
+
+
+fieldset input[type="radio"]{
+    opacity: 0;
+}
+
+fieldset input[type="radio"] label{
+    float: left;
+}    
+
+fieldset input[type="radio"]:checked+label>svg {
+    border: 1px solid black;
 }
