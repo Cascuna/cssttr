@@ -1,7 +1,22 @@
 # Components
-https://color.adobe.com/Simple-Theme-color-theme-10451401/edit/?copy=true&base=2&rule=Custom&selected=4&name=Copy%20of%20Simple%20Theme&mode=rgb&rgbvalues=0.862745,0.188235,0.294118,0.976471,0.372549,0.384314,1,1,1,0.121569,0.176471,0.239216,0.203922,0.247059,0.294118&swatchOrder=0,1,2,3,4
 Rating example makes use of Emoji from: http://emojione.com
 
-wat je hebt gedaan, wat je vanplan bent volgende week overtuigen
+# Wat heb ik gedaan?
 
-Emoji bar, nav-bar
+## Week 1
+
+### Dag 1 
+Ik ben eerst begonnen met nadenken over wat ik in mijn website wil hebben, wat is de stijl, waarhoud ik rekening mee, wat wilt mijn klant(marijn) nou eigenlijk?
+Hierdoor heb ik veel onderzoek gedaan over wat accesible websites nou eigenlijk zijn, en wat ze "accesible maakt". https://www.nngroup.com/articles/keyboard-accessibility/
+Aan de hand hiervan heb ik acceskeys onderzocht, en in de eerste instantie dacht ik eraan om deze te implementeren.  
+  
+Voor de rest ben ik langzaam begonnen met het ontwikkelen van de website, voornamenlijk met de generieke stijl van de website, een "ga direct naar content" pagina, kijken hoe je radio buttons kan stijlen en het oplossen van een sub-menu in de navigatie balk die openklapt als er op gefocust wordt.
+
+### Dag 2
+Deze dag begon ik met het mooier maken van mijn navigatie balk. Hier liep ik tegen best wel wat problemen aan met positionering, waardoor ik uiteindelijk een flexbox ben gaan gebruiken en het gevoel heb ik dat ik position in css beter snap.  
+Ook heb ik veel geexperimenteerd, zo heb ik gekeken of aan de hand van een child element je een parent kan aanpassen, verschillende stijlings mogelijkheden geprobeert om te kijken wat ik het prettigst vind.
+
+Alhoewel deze dag vrij moeizaam ging door het velen uitzoeken, had ik aan het eind van de dag wel meer het gevoel dat ik me bewust was van wat ik deed.
+
+### Dag 3
+Vandaag heb ik voornamenlijk besteed aan het opschonen van mijn CSS bestand, en wat comments toegevoegd. Deels voor de docenten maar ook deels omdat ik orde begon kwijt te raken, en hier dus echt niet tegen kan als ontwikkelaar. Dit heeft me dan ook gemotiveerd om na te denken over andere manieren om de CSS beter te scheiden, bijvoorbeeld een stylesheet per component, maar dit is iets wat ik ga onderzoeken op het moment dat hier tijd voor is buiten de opdrachten. 
