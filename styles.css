@@ -6,7 +6,7 @@
 
 *:focus {
     background-color: #343F4B;
-    box-shadow: 2px 2px;
+    box-shadow: 2px 2px;    
     /* transform: scale(1.1, 1); */
 }
 html{
@@ -20,6 +20,7 @@ html{
 }
 
 h1 {
+    align-self: center;
     color: whitesmoke;
     text-align: center;
     grid-column: span 3;
@@ -141,13 +142,39 @@ svg {
     width: 2em;
 }
 
-img {
+/* img {
     max-width: 100%;
-}
+} */
+/* article figure {
+    max-width: 100%;
+} */
+
+/* article:focus:before{
+    content: "";    
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.8);
+
+} */
+
 article figure {
-    max-width: 100%;
+    max-width: 300px;
+    width: min-content;
+    margin: auto; 
 }
 
+
+footer>p:first-child:nth-last-child(n+2),
+footer>p:first-child:nth-child(n+2) ~ p {
+    border-bottom: 1px solid black;
+}
+
+
+article figure > img { max-width: inherit; }
 article h1 {
     /* display:inline-block; */
 }
@@ -165,10 +192,12 @@ fieldset input[type="radio"]{
 
 fieldset input[type="radio"] label{
     float: left;
+    border-bottom: 1px solid lightcoral;
 }    
 
 fieldset input[type="radio"]:checked+label>svg {
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 50%;
 }
 
 progress[value]
