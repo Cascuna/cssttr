@@ -1,7 +1,7 @@
 
-/* :root {
-    --min-width: 2em;
-} */
+:root {
+    --text-color: whitesmoke;
+}
 
 /* Generieke styling */
 *:focus {
@@ -27,6 +27,7 @@ body {
     display: grid;
     grid-gap: 1em;
     grid-template-columns: 1fr 3fr 1fr;
+    color: var(--text-color);
 }
 
 content {
@@ -40,7 +41,7 @@ li {
 
 a {
     text-decoration: none;
-    color: white;
+    color:var(--text-color);
 }
 
 ol {
@@ -51,7 +52,7 @@ ol {
 /* Header teksten */
 
 body > h1 {
-    color: whitesmoke;
+    color: var(--text-color);
     text-align: center;
     grid-column: span 3;
     font-family: Ampersand, Helvetica, sans-serif;
@@ -142,12 +143,46 @@ svg {
 /* Chat module */
 ol[module='chat-module'] {
     background-color:grey;
+    padding: 1em 1em 1em 1em;
 }
 
 ol[module='chat-module']>li>footer>p:first-child:nth-last-child(n+2),
 ol[module='chat-module']>li>footer>p:first-child:nth-child(n+2) ~ p {
     /* Selecteer all objecten na het eerste element */
     border-bottom: 1px solid black;
+}
+
+form {
+    background: #495C70;
+    padding: 2em 2em 1em 2em;
+    border: 0.5em solid #53687E;
+}
+
+form label {
+    display: block;
+}
+
+/* form input, */
+form textarea {
+    background: transparent;
+    outline: none;
+    border: 1px dashed #838383; 
+    /* border-bottom: 1px dashed #83A4C5; */
+    width: 80%;
+    height: 15em;
+    /* overflow: hidden; */
+    resize: none;
+    /* height: 1em; */
+}
+
+form button[type=submit]{
+    /* display: inline-block; */
+    background: #576E86;
+    border: none;
+    padding: 8px 10px 8px 10px;
+    border-radius: 5px;
+    color: #A8BACE;
+
 }
 
 
