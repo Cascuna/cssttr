@@ -22,7 +22,7 @@ Alhoewel deze dag vrij moeizaam ging door het velen uitzoeken, had ik aan het ei
 Vandaag heb ik voornamenlijk besteed aan het opschonen van mijn CSS bestand, en wat comments toegevoegd. Deels voor de docenten maar ook deels omdat ik orde begon kwijt te raken, en hier dus echt niet tegen kan als ontwikkelaar. Dit heeft me dan ook gemotiveerd om na te denken over andere manieren om de CSS beter te scheiden, bijvoorbeeld een stylesheet per component, maar dit is iets wat ik ga onderzoeken op het moment dat hier tijd voor is buiten de opdrachten. 
 
 ## Week2
-[ ] - Media Queries onderzoeken & Toepassen
-[x] - Algemene stijl verbeteren, beter leesbaar
-[ ] - CSS variables toepassen
-[ ]
+- [ ] - Media Queries onderzoeken & Toepassen
+- [x] - Algemene stijl verbeteren, beter leesbaar
+- [ ] - CSS variables toepassen
+- [ ]
