@@ -172,6 +172,12 @@ ol[module='chat-module']>li>p {
 
 }
 
+ol[module='chat-module']:focus + form,
+ol+form:focus{
+    box-shadow: 2px 2px black;
+    transition: .2s;   
+}
+
 ol[module='chat-module']>li:nth-of-type(odd) >p{
     text-align: right;
     border: 1px solid #25D366;
@@ -190,6 +196,7 @@ ol[module='chat-module']>li>footer>p:first-child:nth-child(n+2) ~ p {
 form {
     background-color: #495C70;
     padding: 2em 2em 1em 2em;
+    /* border-radius: 1em; */
     /* border: 0.5em solid #53687E; */
     
 }
@@ -233,6 +240,12 @@ form input[type=password] {
     width: 100%;
 }
 
+form input[type=email] input:required, 
+form input[type=email] input:invalid, 
+form input[type=email]:-moz-placeholder {
+    border: none !important;
+    /* border-bottom: 1px solid red !important; */
+}
 
 
 form input:focus,
@@ -268,6 +281,8 @@ form button[type=submit]{
 
 ol+form {
     padding: 0;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
 ol+form label{
@@ -342,10 +357,16 @@ article > img {
 fieldset > input[type="radio"]{
     opacity: 0;
 }
+
+fieldset {
+    margin: auto;
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
+}
   
 fieldset input[type="radio"]:checked+label>svg {
     border: 1px solid black;
-    border-radius: 50%;
+    border-radius: 100%;
     filter: grayscale(0);
 }
 fieldset input[type="radio"]+label{
@@ -354,11 +375,12 @@ fieldset input[type="radio"]+label{
 
 fieldset input[type="radio"]+label>svg {
     display: block;
+    margin: auto;
     text-align: center;
     border: 1px solid transparent;
     border-radius: 50%;
     filter: grayscale(100%);
-    width: 2em;
+    width: 2.3em;
     transition: border 0.2s ease-in, filter 0.2s ease-in;
 }
 
