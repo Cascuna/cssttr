@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="NL">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <a name="skip" tabindex=1 href="#maincontent">
+    <a name="skip" tabindex=0 href="#maincontent">
         Ga direct naar de content
     </a>
     <h1>Alex & een titel die een ampersand nodig maakt</h1>
@@ -42,13 +42,14 @@
         
             <label for="field-password">Password</label>
             <input type="password" id="field-password" name="field-password" required>
-        
-            <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
-            <label for="field-stay-logged-in">Stay logged in</label>
-        
-            <a href="/">Forgot password</a>
-        
+            
+            
             <button type="submit">Login</button>
+            <span>
+                    <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+                    <label for="field-stay-logged-in">Stay logged in</label>
+                </span>
+                <a href="/">Forgot password?</a>
     
         </form>
 
@@ -91,9 +92,8 @@
     
     <form action="/" method="post" tabindex="0">
     
-        <label for="field-message">Message: 
-        <textarea name="field-message" id="field-message"></textarea>
-        </label>
+        <label for="field-message">Message: </label>
+        <textarea name="field-message" placeholder="Message..." id="field-message"></textarea>
         <button type="submit">Send</button>
     
     </form>
