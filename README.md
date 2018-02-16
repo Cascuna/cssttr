@@ -22,7 +22,28 @@ Alhoewel deze dag vrij moeizaam ging door het velen uitzoeken, had ik aan het ei
 Vandaag heb ik voornamenlijk besteed aan het opschonen van mijn CSS bestand, en wat comments toegevoegd. Deels voor de docenten maar ook deels omdat ik orde begon kwijt te raken, en hier dus echt niet tegen kan als ontwikkelaar. Dit heeft me dan ook gemotiveerd om na te denken over andere manieren om de CSS beter te scheiden, bijvoorbeeld een stylesheet per component, maar dit is iets wat ik ga onderzoeken op het moment dat hier tijd voor is buiten de opdrachten. 
 
 ## Week2
-- [ ] - Media Queries onderzoeken & Toepassen
-- [x] - Algemene stijl verbeteren, beter leesbaar
-- [ ] - CSS variables toepassen
-- [ ]
+- [x] - Media Queries onderzoeken & Toepassen  
+Ik heb het gevoel dat dit nog wat verbeterd kanworden
+
+- [x] - Algemene stijl verbeteren, beter leesbaar  
+Andere lettertype's gebruikt, genoeg padding etc.
+- [x] - CSS variables toepassen  
+- [x] - Artikelen modules implementeren & stylen 
+Ik heb deze een eigen grid gegeven voor dynamischere styling
+- [x] - Progress bar implementeren & stylen
+Met dank aan verschillende studenten die mij een handje hebben geholpen
+- [x] - Stijling consistenter maken  
+De styling is een stuk aanpasbaarder dan eerst.
+- [x] - Chat module implementeren & stylen
+- [x] - Animaties toevoegen zodat de pagina meer tot leven komt
+- [ ] - Alle opdracht van week 1/2 (uit het boek, implementeren)  
+- [x] - psuedo random gradient
+- [x] - loading bar
+- [x] - transitions
+- [x] - Aangepaste cursor styling
+- [x] - Styling aan de hand van validatie
+- [ ] - grijze achtergrond op focus van een element
+- [ ] - glazige achtergrond op focus van een element    
+Deze week is het me nietgelukt ze allemaal af te krijgen, dit ga ik in week 3 oppakken
+- [x] - Feedback week 1 verwerken
+- [x] - Login module implementeren & stylen
