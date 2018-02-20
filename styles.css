@@ -171,50 +171,51 @@ nav ul ul li {
 }
 
 /* Chat module */
-ol[module='chat-module'] {
+main > ol {
     background-color: var(--module-bg-color);
     padding: var(--default-padding);
     color: black;
     position: relative;
 }
 
-ol[module='chat-module']>li {
+ol>li {
     display: flex;
     flex-direction: column;
 }
 
-ol[module='chat-module']>li>p {
+ol>li>p {
     border-radius: 1.5em;
     padding: 0.5em;
     display: inline;
     border: 1px solid var(--default-white);
     background-color: var(--default-white);
     align-self: flex-start;
+    border-bottom-left-radius: 0%;
 }
 
-ol[module='chat-module']>li>p+footer {
+ol>li>p+footer {
     text-align: right;
     padding-right: 1em;
     color: var(--default-white);
 }
 
-ol[module='chat-module']>li:nth-of-type(odd) > p {
+ol>li:nth-of-type(odd) > p {
     text-align: right;
     border: 1px solid #25D366;
     background-color: #25D366;
     align-self: flex-end;
+    border-bottom-left-radius: 1.5em;
     border-bottom-right-radius: 0%;
     margin-right:1em;
     color: black;     
 }
 
-ol[module='chat-module']>li:nth-of-type(even) > p + footer {
+ol>li:nth-of-type(even) > p + footer {
     text-align:left;
-    border-bottom-left-radius: 0%;
 }
 
-ol[module='chat-module']>li>footer>p:first-child:nth-last-child(n+2),
-ol[module='chat-module']>li>footer>p:first-child:nth-child(n+2) ~ p {
+ol>li>footer>p:first-child:nth-last-child(n+2),
+ol>li>footer>p:first-child:nth-child(n+2) ~ p {
     /* Selecteer all objecten na het eerste element */
     display: inline;
     border-bottom: 2px solid black; 
@@ -237,19 +238,16 @@ form {
     
 }
 
-/* Chat module form */
-/* Ik benoem de ol[module=...] expliciet omdat dit in sommige regels nodig was,
-en liever consistent ben met mijn regels. ol + form zou het zelfde effect moeten hebben in de meeste
-gevallen.  */
+
 
 /* Stijlt het form en de module samen zodat het meer als 1 component oogt als het gefocust is */
-ol[module='chat-module']:focus + form,
-ol[module='chat-module'] + form:focus {
+ol:focus + form,
+ol + form:focus {
     box-shadow: 2px 2px black;
     transition: .2s;   
 }
 
-ol[module='chat-module'] + form {
+ol + form {
     padding: 0;
     height: 1px;
     margin: -1em 0em 0em 0em;
@@ -268,16 +266,16 @@ ol[module='chat-module'] + form {
  
 }
 
-ol[module='chat-module'] + form label {
+ol + form label {
     display: none;
 }
 
-ol[module='chat-module'] + form button {
+ol + form button {
     flex: 1;
     width: auto;
 }
 
-ol[module='chat-module'] + form textarea {
+ol + form textarea {
     background: transparent;
     border: none;
     border-top: 1px solid black;
@@ -289,10 +287,10 @@ ol[module='chat-module'] + form textarea {
 /* Zorgt ervoor dat er gefocust kan worden op het chat-module formulier vanuit vanuuit de chatmodule
 en dat deze focus houd op hetmoment dat er in het formulier gewerkt wordt */
 
-ol[module='chat-module'] + form:focus + form,
-ol[module='chat-module'] + form:focus-within,
-ol[module='chat-module']:hover + form, 
-ol[module='chat-module']+form:hover {
+ol + form:focus + form,
+ol + form:focus-within,
+ol:hover + form, 
+ol + form:hover {
     height: auto;
     opacity: 1;
     /* display:block;   */
@@ -583,7 +581,6 @@ input[type='checkbox']+label::before {
 
 input[type='checkbox']:checked + label::before {
     content: '\2713';
-
     background: var(--nav-color);
 }
 
