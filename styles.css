@@ -385,13 +385,7 @@ section {
     section {
         grid-template-columns: 2fr 2fr;
         align-items: start;
-        grid-auto-flow: row column;  
-    }
-
-
-    article:nth-of-type(3){
-        grid-column: 2;
-        margin-top: -16em;
+        grid-template-rows: minmax(50px, 700px) minmax(0,340px);
     }
 }
 
@@ -406,14 +400,11 @@ article * {
     font-family: 'Poppins', sans-serif;
 }
 
-
 article > figure {
     max-width: 100%;
     height: min-content;
     margin: auto; 
-
 }
-
 
 article > figure > figcaption,
 article h1,
