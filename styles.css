@@ -30,7 +30,6 @@
 }
 
 html {
-    /* background-color: #1F2D3D; */
     background: #5C832F;
     background-image:
     linear-gradient(90deg, #284907 11px, transparent 0),
@@ -38,7 +37,6 @@ html {
     linear-gradient(90deg, #363942 41px, transparent 0);
     background-size: 41px 100%, 61px 100%, 83px 100%;
 }
-
 
 body {
     display: grid;
@@ -69,8 +67,9 @@ a {
     color:var(--default-white);
 }
 
-a:focus {
-    border-bottom-color: transparent;
+a:focus, 
+a:hover {
+    border-bottom-color: transparent !important;
     transition: all 0.5s ease-in;
     box-shadow: none;
 }
@@ -96,7 +95,7 @@ a[name="skip"] {
 }
 
 a[name="skip"]:focus {
-    top: 4em;
+    top: 7.4em;
 }
 
 header {
@@ -138,23 +137,27 @@ nav ul {
 
 nav ul li a {
     padding: .5em .5em .5em .5em;
+    /* display: inline-block; */
 }
-nav ul li a:focus {
-    background-color:#82BF6E;
-    padding: .8em .8em .8em .8  em;
-    width: 100%; 
+nav ul li a:focus,
+nav ul li a:hover {
+    background-color:rgba(73, 92, 112, .95);
+    /* padding: .8em .8em .8em 0em; */
+   
 }
 
 nav ul ul {
     display: block;
     visibility: hidden;
     opacity: 0;
+    /* margin-top: 0.6em; */
     position: absolute;
     text-align: start;
     transition: visibility 0s, opacity 0.3s linear;
 }
 
-nav > ul > li:focus-within > ul {
+nav > ul > li:focus-within > ul ,
+nav > ul > li:hover > ul {
     visibility: visible;
     opacity: 1;
 }
@@ -214,9 +217,16 @@ ol[module='chat-module']>li>footer>p:first-child:nth-child(n+2) ~ p {
 
 
 /* form styling for multiple forms */
+@media(min-width: 35rem){
+    form {
+        width:50%;
+        margin: auto;
+    }
+}
 form {
     background-color: var(--module-bg-color);
     padding: var(--default-padding);
+  
     /* border-radius: 1em; */
     /* border: 0.5em solid #53687E; */
     
@@ -239,7 +249,8 @@ ol[module='chat-module'] + form {
     height: 1px;
     margin: -1em 0em 0em 0em;
     opacity: 0;
-    
+    width: 100%;
+
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
 
@@ -271,9 +282,11 @@ ol[module='chat-module'] + form textarea {
 /* box-shadow: 1px 0px 12px 5px rgba(0,0,0,0.36); */
 /* Zorgt ervoor dat er gefocust kan worden op het chat-module formulier vanuit vanuuit de chatmodule
 en dat deze focus houd op hetmoment dat er in het formulier gewerkt wordt */
-ol[module='chat-module']:focus-within + form,
-ol[module='chat-module'] + form:focus,
-ol[module='chat-module'] + form:focus-within {
+
+ol[module='chat-module'] + form:focus + form,
+ol[module='chat-module'] + form:focus-within,
+ol[module='chat-module']:hover + form, 
+ol[module='chat-module']+form:hover {
     height: auto;
     opacity: 1;
     /* display:block;   */
@@ -281,7 +294,8 @@ ol[module='chat-module'] + form:focus-within {
 }
 /* Voorkomt het herinitialiseren van de transitie*/
 ol[module='chat-module']+form:focus,
-ol[module='chat-module']+form:focus-within {
+ol[module='chat-module']+form:focus-within, 
+ol[module='chat-module']+form:hover {
     transition: none;
 }
 
@@ -298,16 +312,18 @@ form input[type=password] {
     box-shadow: none;
 }
 
-input:focus:invalid {
+input:focus:invalid, 
+input:hover:invalid {
     border-color: red!important;
 }
 
-input:focus:valid {
-    border-color: lightgreen!important;
+input:focus:valid,
+input:hover:valid {
+    border-color: #00FF48!important;
 }
 
 form:invalid button {
-    filter: grayscale(60%)!important;
+    filter: grayscale(100%)!important;
     color: var(--default-white);
     cursor: not-allowed;
 }
@@ -325,7 +341,8 @@ form button[type=submit] {
     transition: all .5s ease-in-out;
 }
 
-form button[type=submit]:focus{
+form button[type=submit]:focus,
+form button[type=submit]:hover{
     filter: brightness(85%);
     box-shadow: none;
     border:none;
@@ -358,7 +375,7 @@ section {
     grid-gap: 1em;
     margin-top: 1em;
     align-items: start;
-    grid-auto-flow: dense;  
+    grid-auto-flow: row column;  
 }
 
 @media(min-width: 35em){
@@ -376,6 +393,11 @@ article {
 
 article * {
     font-family: 'Poppins', sans-serif;
+}
+
+article:nth-of-type(3){
+    grid-column: 2;
+    margin-top: -16em;
 }
 
 article > figure {
@@ -409,6 +431,7 @@ article > img {
     float: left;
     padding-left: 2em;
     padding-top: 1.4em;
+    padding-right: 0.6em;
 } 
 
 /* Rating module */
@@ -421,7 +444,8 @@ fieldset {
     padding: var(--default-padding);
 }
 
-fieldset:focus-within {
+fieldset:focus-within,
+fieldset:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px;
    
@@ -435,8 +459,15 @@ fieldset input[type="radio"]:checked+label>svg {
     border-radius: 100%;
     filter: grayscale(0);
 }
+
+fieldset input[type="radio"]:checked+label {
+    transform:scale(1.1);
+    color: black;
+}
+
 fieldset input[type="radio"]+label {
     display: inline-block;
+    transition: all 0.2s ease-in;
 }
 
 fieldset input[type="radio"]+label>svg {
@@ -447,7 +478,7 @@ fieldset input[type="radio"]+label>svg {
     border-radius: 50%;
     filter: grayscale(100%);
     width: 2.3em;
-    transition: border 0.2s ease-in, filter 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 /* step-indicator module */
@@ -482,30 +513,36 @@ nav progress+ol li {
     background-color: var(--progress-bar-color);
     box-shadow: 0px 0px 0px 3px;
     display: block;
-    height: 4rem;
-    margin-top: -1.7rem;
-    width: 4rem;
-    line-height: 4rem;
+    height: 5rem;
+    margin-top: -2.1rem;
+    width: 5rem;
+    line-height: 5rem;
     text-align: center;
     border-radius: 50%;
     padding-bottom: 75%;
+    transition: 0.5s;
 }
 
 nav progress+ol li:focus-within,
-nav progress[value]+ol li:focus-within{
-    filter: brightness(20%);
+nav progress[value]+ol li:focus-within,
+nav progress+ol li:hover {
+    /* border-color: black; */
+    transform: scale(1.1);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75),  0 0 0 3px rgba(0,0,42,.98);
+
 }
 
 
 nav progress+ol li:not(:first-child),
 nav progress+ol li:not(:first-child) {
-    background-color: white;
+    background-color: var(--default-white);
     color: var(--progress-bar-color);
     border-color: var(--progress-bar-color);
 }
 
 nav progress+ol li:not(:first-child)>a {
     color: var(--progress-bar-color);
+    border-color: var(--progress-bar-color);
 }
 
 progress[value]
@@ -516,7 +553,7 @@ progress[value]
     border-radius: 1rem;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
     position: relative;
-    transition: 0.2s;
+    transition: 0.5s;
 }
 
 /* Loader 
