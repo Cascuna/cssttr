@@ -70,7 +70,7 @@ a {
 a:focus, 
 a:hover {
     border-bottom-color: transparent !important;
-    transition: all 0.5s ease-in;
+    transition: all 0.3s ease-in;
     box-shadow: none;
 }
 
@@ -257,8 +257,8 @@ ol[module='chat-module'] + form {
     /* Verstop het formulier achter de chatmodule */
     z-index: -1;
     transform: translateY(-100%); 
-    transition: height 1s, transform 0.3s ease-in-out;
-
+    transition: all .3s ease-in;
+    overflow: hidden;
     display: flex;
  
 }
@@ -276,6 +276,7 @@ ol[module='chat-module'] + form textarea {
     background: transparent;
     border: none;
     border-top: 1px solid black;
+    padding: 1rem 1rem 0 1rem;
     flex: 3;
 }
 
@@ -292,12 +293,7 @@ ol[module='chat-module']+form:hover {
     /* display:block;   */
     transform: none;
 }
-/* Voorkomt het herinitialiseren van de transitie*/
-ol[module='chat-module']+form:focus,
-ol[module='chat-module']+form:focus-within, 
-ol[module='chat-module']+form:hover {
-    transition: none;
-}
+
 
 form input[type=email],
 form input[type=password] {
@@ -308,7 +304,7 @@ form input[type=password] {
     margin: 0.5em 0 1.6em 0;
     color: aliceblue;
     width: 100%;
-    transition: all .8s ease;
+    transition: all .3s ease;
     box-shadow: none;
 }
 
@@ -338,7 +334,7 @@ form button[type=submit] {
     color: var(--default-white);
     font-size: 1.2em;
     width:100%;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 form button[type=submit]:focus,
@@ -355,8 +351,13 @@ form a {
     border: none;
 }
 
-form label {
+form label{
     display: block;
+    cursor: text;
+}
+
+form span label {
+    cursor: pointer; 
 }
 
 form span {
@@ -374,13 +375,20 @@ section {
     display: grid;
     grid-gap: 1em;
     margin-top: 1em;
-    align-items: start;
-    grid-auto-flow: row column;  
+
 }
 
 @media(min-width: 35em){
     section {
         grid-template-columns: 2fr 2fr;
+        align-items: start;
+        grid-auto-flow: row column;  
+    }
+
+
+    article:nth-of-type(3){
+        grid-column: 2;
+        margin-top: -16em;
     }
 }
 
@@ -395,10 +403,6 @@ article * {
     font-family: 'Poppins', sans-serif;
 }
 
-article:nth-of-type(3){
-    grid-column: 2;
-    margin-top: -16em;
-}
 
 article > figure {
     max-width: 100%;
@@ -468,6 +472,7 @@ fieldset input[type="radio"]:checked+label {
 fieldset input[type="radio"]+label {
     display: inline-block;
     transition: all 0.2s ease-in;
+    cursor: pointer;
 }
 
 fieldset input[type="radio"]+label>svg {
@@ -520,7 +525,8 @@ nav progress+ol li {
     text-align: center;
     border-radius: 50%;
     padding-bottom: 75%;
-    transition: 0.5s;
+    transition: 0.2s;
+    box-shadow: 0 0 0 rgba(0,0,0,0.75), 0 0 0 px rgba(0,0,42,.98);
 }
 
 nav progress+ol li:focus-within,
@@ -553,12 +559,63 @@ progress[value]
     border-radius: 1rem;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
     position: relative;
-    transition: 0.5s;
+    transition: 0.3s;
 }
+
+input[type='checkbox']+label::before {
+    content: '\a0'; /* non-break space */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    border-radius: .2em;
+    background: silver;
+    text-indent: .15em;
+    line-height: 1em;
+    font-size: 1.1em;
+    transition: 0.2s ease-in;
+}
+
+input[type='checkbox']:checked + label::before {
+    content: '\2713';
+
+    background: #DC304B;
+}
+
+
+input[type='checkbox']:focus + label::before {
+    box-shadow: 6px 6px 3px 0px rgba(0,0,0,0.75),  0 0 0 2px rgba(0,0,42,.98);
+
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
 
 /* Loader 
 https://projects.lukehaas.me/css-loaders/*/
-.spinner {
+body>div {
+    position: fixed;
+    background-color:white;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: welcome 0.5s ease forwards .4s;
+  }
+  @keyframes welcome {
+      to {
+          opacity: 0;
+          z-index: -100;
+      }
+  }
+  
+
+body>div>span {
     height: 5rem;
     width: 5rem;
     margin: 0 auto;
@@ -568,9 +625,10 @@ https://projects.lukehaas.me/css-loaders/*/
     border-bottom: .5rem solid var(--spinner-base-color);
     border-top: .5rem solid rgba(0, 174, 239, .8);
     border-radius: 100%;
-  }
+    z-index: 2; 
+}
     
-  @keyframes rotation {
+@keyframes rotation {
     from {
       transform: rotate(0deg);
     }
