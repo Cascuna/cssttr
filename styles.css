@@ -409,7 +409,6 @@ article * {
 
 article > figure {
     max-width: 100%;
-    width: min-content;
     height: min-content;
     margin: auto; 
 
@@ -527,7 +526,6 @@ nav progress+ol li {
     line-height: 5rem;
     text-align: center;
     border-radius: 50%;
-    padding-bottom: 75%;
     transition: 0.2s;
     box-shadow: 0 0 0 rgba(0,0,0,0.75), 0 0 0 px rgba(0,0,42,.98);
 }
